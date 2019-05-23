@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+  box-sizing: border-box; }
+
+html {
+  height: 100%;
+  font-size: 16px; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+
+@keyframes dab {
+  from, 30% {
+    transform: rotateY(0deg) rotateZ(0deg); }
+  40%, 60% {
+    transform: rotateY(20deg) rotateZ(4deg); }
+  to {
+    transform: rotateY(0deg) rotateZ(0deg); } }
+@keyframes leftArm {
+  from, 70% {
+    transform: rotate(-20deg); }
+  to {
+    transform: rotate(-80deg); } }
+@keyframes leftLowerArm {
+  from, 70% {
+    transform: rotateX(0deg) rotate(10deg); }
+  to {
+    transform: rotateX(130deg) rotate(40deg); } }
+@keyframes leftHand {
+  from, 86% {
+    transform: rotateX(0deg) rotate(0deg); }
+  to {
+    transform: rotateX(20deg) rotate(-60deg); } }
+@keyframes rightArm {
+  from, 70% {
+    transform: rotate(20deg); }
+  to {
+    transform: rotate(130deg); } }
+@keyframes lowerRightArm {
+  from, 70% {
+    transform: rotate(-10deg); }
+  to {
+    transform: rotate(-5deg); } }
+@keyframes rightHand {
+  from, 86% {
+    transform: rotateX(0deg) rotate(0deg); }
+  to {
+    transform: rotateX(-70deg) rotate(22deg); } }
+@keyframes leftLeg {
+  from, 70% {
+    transform: rotate(-14deg); }
+  to {
+    transform: rotate(-25deg); } }
+@keyframes leftLowerLeg {
+  from, 70% {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(12deg); } }
+@keyframes rightLeg {
+  from, 70% {
+    transform: rotate(14deg); }
+  to {
+    transform: rotate(15deg); } }
+@keyframes rightLowerLeg {
+  from, 70% {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(3deg); } }
+@keyframes headTilt {
+  from, 35% {
+    transform: translate3d(0, 0, 0); }
+  44%, 64% {
+    transform: translate3d(10px, 18px, 0) rotateX(30deg); }
+  to {
+    transform: translate3d(0, 0, 0); } }
+@keyframes sneeze {
+  from, 50% {
+    transform: scale3d(1, 1, 1); }
+  52% {
+    transform: scale3d(1.25, 0.75, 1); }
+  55% {
+    transform: scale3d(0.75, 1.25, 1); }
+  57% {
+    transform: scale3d(1.15, 0.85, 1); }
+  59% {
+    transform: scale3d(0.95, 1.05, 1); }
+  62% {
+    transform: scale3d(1.05, 0.95, 1); }
+  65%, to {
+    transform: scale3d(1, 1, 1); } }
+.arm {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 40px;
+  background: currentColor; }
+  .arm.left {
+    right: 0%;
+    border-top-right-radius: 25px;
+    transform-origin: top center;
+    animation-name: leftArm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate; }
+    .arm.left .lower-arm {
+      transform-origin: top right;
+      animation-name: leftLowerArm;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+      animation-direction: alternate; }
+    .arm.left .hand {
+      transform-origin: top left;
+      animation-name: leftHand; }
+  .arm.right {
+    left: 0;
+    border-top-left-radius: 25px;
+    transform-origin: top center;
+    animation-name: rightArm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate; }
+    .arm.right .lower-arm {
+      transform-origin: top left;
+      animation-name: lowerRightArm;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+      animation-direction: alternate; }
+    .arm.right .hand {
+      transform-origin: top left;
+      animation-name: rightHand; }
+  .arm .lower-arm {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 26px;
+    background: currentColor; }
+  .arm .hand {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: currentColor;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-direction: alternate; }
+
+.animated {
+  will-change: transform; }
+
+.stickman {
+  position: relative;
+  width: 80px;
+  margin: 0 auto;
+  color: #BDC4D0;
+  transform-origin: bottom center;
+  animation-name: dab;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both; }
+
+.head {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 20px auto 0;
+  animation-name: headTilt;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both; }
+  .head .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: currentColor;
+    border-radius: 100%;
+    animation-name: sneeze;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear; }
+
+.torso {
+  position: relative;
+  height: 80px;
+  width: 10px;
+  margin: 0px auto 0;
+  background: currentColor; }
+  .torso:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: currentColor;
+    z-index: -1; }
+
+.legs {
+  position: relative;
+  width: 10px;
+  height: 80px;
+  margin: 0 auto; }
+  .legs .leg {
+    position: absolute;
+    top: -10px;
+    height: 48px;
+    width: 10px;
+    background: #BDC4D0;
+    transform-origin: top center; }
+    .legs .leg.left {
+      left: 0;
+      animation-name: leftLeg;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+      animation-direction: alternate; }
+      .legs .leg.left .lower-leg {
+        transform-origin: top center;
+        animation-name: leftLowerLeg;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+        animation-direction: alternate; }
+    .legs .leg.right {
+      right: 0;
+      animation-name: rightLeg;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+      animation-direction: alternate; }
+      .legs .leg.right .lower-leg {
+        transform-origin: top center;
+        animation-name: rightLowerLeg;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+        animation-direction: alternate; }
+  .legs .lower-leg {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    height: 45px;
+    background: currentColor;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px; }</style>
+</head>
+<body>
+    <h1>YA HA HA! YOU FOUND ME!</h1>
+        <div class="stickman">
+                <div class="head">
+                        <div class="face"></div>
+                </div>
+                <div class="torso">
+                        <div class="arm left">
+                                <div class="lower-arm">
+                                        <div class="hand"></div>
+                                </div>
+                        </div>                
+                        <div class="arm right">
+                                <div class="lower-arm">
+                                        <div class="hand"></div>
+                                </div>
+                        </div>
+                </div>
+                <div class="legs">
+                        <div class="leg left">
+                                <div class="lower-leg"></div>
+                        </div>
+                        <div class="leg right">
+                                <div class="lower-leg"></div>
+                        </div>                
+                </div>
+        </div>
+</body>
+</html>

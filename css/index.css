@@ -1,0 +1,128 @@
+body {
+  background: #007991;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.myHead { grid-area: header; font-family: 'Oswald', sans-serif;}
+.West { grid-area: west;}
+.Cen { grid-area: cen;}
+
+#java { grid-area: java;}
+#db { grid-area: db;}
+.footer {grid-area: foot;}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header header'
+    'west west java java db db cen cen'
+    'west west java java db db cen cen'
+    'west west foot foot foot foot cen cen';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  box-shadow: 5px 10px rgba(55, 254, 224, 0.48);
+}
+
+.hamburger-top {
+
+  margin: 0 5px 5px 0;
+  height: 35px;
+  width: 60px;
+  background-color: rgb(206, 212, 104);
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+
+.hamburger-meat {
+  margin: 0 5px 5px 0;
+  height: 20px;
+  width: 60px;
+  background-color: rgb(112, 91, 71);
+  border-radius: 15px;
+}
+
+.hamburger-cheese {
+  margin: 0 5px 5px 0;
+  height: 10px;
+  width: 60px;
+  background-color: rgb(254, 235, 65);
+  border-radius: 15px;
+}
+
+.hamburger-bot {
+  margin: 0 5px 5px 0;
+  height: 25px;
+  width: 60px;
+  background-color: rgb(206, 212, 104);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.form {
+  width: 250px;
+  clear: both;
+}
+
+
+input[type=text] {
+  font-size: 1.2em;
+  border: 2px solid #3d57ff;
+  border-radius: 4px;
+  background-color: cyan;
+}
+
+input[type='text']:hover {
+  box-shadow: 5px 5px gray;
+}
+
+input[type='text']:focus {
+  background: #ededed;
+}
+
+input[type=time] {
+  font-size: 1.2em;
+  border: 2px solid #3d57ff;
+  border-radius: 4px;
+  background-color: cyan;
+}
+
+
+input[type=email] {
+  font-size: 1.2em;
+  border: 2px solid #3d57ff;
+  border-radius: 4px;
+  background-color: cyan;
+}
+input[type=date] {
+  font-size: 1.2em;
+  border: 2px solid #3d57ff;
+  border-radius: 4px;
+  background-color: cyan;
+}
+
+input[type=submit] {
+  font-size: 2em;
+  border: 2px solid #3d57ff;
+  border-radius: 4px;
+  background-color: cyan;
+}
+
+input[type='submit']:hover {
+  box-shadow: 5px 5px gray;
+}
+
+select {
+  font-size: 1.2em;
+  border: 2px solid #3d57ff;
+  border-radius: 4px;
+  background-color: cyan;
+}

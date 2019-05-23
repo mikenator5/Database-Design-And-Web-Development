@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="grid-container">
+
+  <div class="myHead">
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+      <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+      <a href="https://www.westada.org" target = "_new" class="w3-bar-item w3-button">West Ada School District</a>
+      <a href="https://www.westada.org/chs" target = "_new" class="w3-bar-item w3-button">Centennial High School</a>
+      <a href="https://www.boisestate.edu" target="_new" class="w3-bar-item w3-button">Boise State</a>
+    </div>
+
+    <!-- Page Content -->
+    <div>
+      <button class="w3-button w3-teal w3-xlarge " style = "float: left;" onclick="w3_open()">
+
+        <div class="hamburger-top"></div>
+        <div class="hamburger-cheese"></div>
+        <div class="hamburger-meat"></div>
+        <div class="hamburger-bot"></div>
+
+      </button>
+
+
+    </div>
+
+    <span><h1>My Computer Science Portfolio - Created by Mike D</h1></span>
+  </div>
+
+  <div class="West">
+    <a href="https://www.westada.org" target="new"><img src="images/West_Ada.png" alt="West Ada"></a>
+    <br>
+    <br>
+    <a href="https://www.boisestate.edu" target="_new"><img src="images/logo/boisestate.svg" alt="Boise State"></a>
+  </div>
+
+  <div class="Cen">
+    <a href="https://www.westada.org/chs" target="new"><img src="images/Cen10.png" alt="Centennial"></a>
+  </div>
+
+  <div class="w3-container" id = "java">
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">Java Projects</button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+      
+    </div>
+  </div>
+</div>
+
+  <div class="w3-container" id = "db">
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">Database and Design Projects</button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="html_project/p1.html" class="w3-bar-item w3-button">How to Make a VM</a>
+      <a href="html_project/p2.html" class = 'w3-bar-item w3-button'>How to Make a MySql DB</a>
+      <a href="html_project/p3.html" class = "w3-bar-item w3-button">How to Join Three Tables</a>
+      <a href="project/learnphp/index.php" class = "w3-bar-item w3-button">First PHP Project</a>
+      <a href="phpdebug/miked/index.php" class = "w3-bar-item w3-button">PHP Debug</a>
+      <a href="phpquery/index.php" class = "w3-bar-item w3-button">PHP Query</a>
+      <a href="phpsuperglobals/index.php" class = "w3-bar-item w3-button">PHP Superglobals</a>
+      <a href="phpsuperglobals/get_post.php" class = "w3-bar-item w3-button">PHP Get and Post</a>
+      <a href="project/readDB/index.php" class="w3-bar-item w3-button">PHP Read Db</a>
+      <!--<a href="project/DBinternet/index.php" class="w3-bar-item w3-button">PHP DB Real Internet</a>-->
+      <a href="project/DBMenuPage/index.php" class="w3-bar-item w3-button">PHP DB Menu Page</a>
+      <a href="alien/index.php" class = "w3-bar-item w3-button">Alien Abduction</a>
+      <a href="phpLogin/index.php" class = "w3-bar-item w3-button">PHP Login</a>
+      <a href="vcs/index.html" class = "w3-bar-item w3-button">Version Control System</a>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="footer">
+    <h4>Special Thanks To...</h4>
+    <h5><a href="http://www.westada.tech/a4/michaelm/" target="_new">Michael M</a></h5>
+    <h5><a href="http://www.westada.tech/a4/christopherz/" target="_new">Christopher Z</a></h5>
+    <h5><a href="http://www.westada.tech/a4/connors/" target="_new">Connor S</a></h5>
+  <div>
+
+</div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+</body>
+</html>

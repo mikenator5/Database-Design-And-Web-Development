@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/p3.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class = "grid-container">
+    <h1>How to Join Three Tables in SQL</h1>
+
+<!--
+    SELECT customer.lname, animal.species, diagnosis.diagnosis
+  FROM ((customer
+  INNER JOIN animal ON customer.IDcustomer = animal.IDcustomer)
+  INNER JOIN diagnosis ON animal.IDanimal = diagnosis.IDanimal)
+  WHERE diagnosis.diagnosis LIKE '%rabies%';
+-->
+
+  <div class="step1">
+    <h1>Use this code to link 3 tables!</h1>
+    <pre>
+      SELECT customer.lname, animal.species, diagnosis.diagnosis
+  FROM ((customer
+  INNER JOIN animal ON customer.IDcustomer = animal.IDcustomer)
+  INNER JOIN diagnosis ON animal.IDanimal = diagnosis.IDanimal);
+
+
+  SELECT customer.lname, animal.species, diagnosis.diagnosis
+  FROM ((customer
+  INNER JOIN animal ON customer.IDcustomer = animal.IDcustomer)
+  INNER JOIN diagnosis ON animal.IDanimal = diagnosis.IDanimal)
+  WHERE animal.species LIKE 'dog';
+
+
+  SELECT customer.lname, animal.species, diagnosis.diagnosis
+  FROM ((customer
+  INNER JOIN animal ON customer.IDcustomer = animal.IDcustomer)
+  INNER JOIN diagnosis ON animal.IDanimal = diagnosis.IDanimal)
+  WHERE animal.species LIKE 'dog' AND animal.gender LIKE 'f';
+
+
+  SELECT customer.lname, animal.species, diagnosis.diagnosis
+  FROM ((customer
+  INNER JOIN animal ON customer.IDcustomer = animal.IDcustomer)
+  INNER JOIN diagnosis ON animal.IDanimal = diagnosis.IDanimal)
+  WHERE diagnosis.diagnosis LIKE '%rabies%';
+  </pre>
+  </div>
+
+  <div class='product'>
+    <h3>Information Produced</h3>
+
+    <img src="../images/3join.png" alt="3Join">
+  </div>
+
+  <div class="step2">
+    <h3>Use this code to link one table!</h3>
+
+  <pre>SELECT
+    customer.fname AS 'First Name',
+    customer.lname AS 'Last Name',
+    customer.state AS 'State',
+    animal.name AS 'Pet\'s Name',
+    animal.species,
+    animal.yearBorn,
+    animal.gender
+FROM
+    customer
+INNER JOIN
+    animal
+ON
+    customer.IDcustomer = animal.IDcustomer
+WHERE
+    customer.state LIKE 'id'
+    AND animal.gender LIKE 'f'
+    AND animal.yearBorn < 2008
+    AND animal.species LIKE 'cat'
+
+    OR animal.species LIKE 'dog'
+    AND animal.name LIKE 'f%'
+    AND animal.yearBorn < 2012
+
+    ORDER BY animal.species, animal.yearBorn DESC;</pre>
+  </div>
+
+  <div class="product2">
+    <img src="../images/join.png" alt="Join">
+  </div>
+
+  <div class="pic">
+    <h3>ERD</h3>
+
+    <p>This is called an ERD or an entity-relationship diagram. This shows the relationship between the 3 tables in the database</p>
+    <img src="../images/ERD.png" alt="ERD">
+  </div>
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PHP Used | Created By Mike D | Started February 2019</h1>
+    <h3>Prints all data in a Database</h3>
+    <p> 
+    <ul>
+        <li>Opens connection to database</li>
+        <li>Then individually prints each item as an element in a table</li>
+    </ul> 
+    </p>
+    <pre>            
+            $sql = "SELECT ID_customer, fname, mname, lname, entrant FROM customer";
+            $result = $conn->query($sql);
+    
+            if ($result->num_rows > 0) {
+                // output data of each row
+                echo "&lt;table>&lt;tr>&lt;th>ID&lt;/th>&lt;th>fname&lt;/th>&lt;th>mname&lt;/th>&lt;th>lname&lt;/th>&lt;th>entrant&lt;/th>&lt;/tr>";
+                while($row = $result->fetch_assoc()) {
+                    echo "&lt;tr>&lt;td>" . $row['ID_customer']. "&lt;/td>&lt;td>" . $row['fname']. "&lt;/td>&lt;td> " . $row['mname'] . " &lt;/td>&lt;td>" . $row['lname']. "&lt;/td>&lt;td> " . $row['entrant'] ."&lt;/td>&lt;/tr>";
+                }
+                echo "&lt;/table>";
+    
+            } else {
+                echo "&lt;br>No results";
+            }
+    </pre>
+    <hr>
+    <h3>Creates New Entry</h3>
+    <p> 
+        <ul>
+            <li>Initializes variables which connects to an HTML form</li>
+            <li>Inserts variables into database using Mysqli</li>
+            <li>Redirects page to the Home Page</li>
+        </ul> 
+    </p>
+    <pre>
+
+        $fname = $_POST['fname'];
+        $mname = $_POST['mname'];
+        $lname = $_POST['lname'];
+        $entrant = $_POST['entrant'];
+        
+        $sql = "INSERT INTO customer(fname, mname, lname, entrant) VALUES ('$fname', '$mname', '$lname', '$entrant');";
+        
+        mysqli_query($conn, $sql);
+        
+        header("Location: ../../DBMenuPage/index.php?newEntry=success"<a href="../../dab/dab.html" style="color: grey; text-decoration: none;" target="_blank">);</a></pre>
+            
+    <hr>
+    <h3>Updates Entry</h3>
+    <p>
+        <ul>
+            <li>Initializes variables by connecting to an HTML form</li>
+            <li>Updates the entry from DB Customer using variables</li>
+            <li>Executes sql command to update</li>
+            <li>Checks to see if entry was successfully updated</li>
+        </ul>
+    </p>
+    <pre>
+
+        $id = $_POST['ID'];
+        $fname = $_POST['fname'];
+        $mname = $_POST['mname'];
+        $lname = $_POST['lname'];
+        $entrant = $_POST['entrant'];
+
+        $sql = "UPDATE customer SET fname = '$fname', mname= '$mname', lname = '$lname', entrant = '$entrant' WHERE ID_customer = $id;";
+
+        if ($conn->query($sql) === TRUE) {
+            header( 'Location: ../../DBMenuPage/index.php?Entry=Updated' ) ;
+            include 'close.php';
+        } else {
+            echo "Error updating record: " . $conn->error;
+            include 'close.php';
+        }
+    </pre>
+    <hr>
+    <h3>Deletes Entry</h3>
+    <p>
+        <ul>
+            <li>Initializes variables by connecting to an HTML form</li>
+            <li>Deletes the entry from Customer using variable "$delete"</li>
+            <li>Checks that entry is deleted using IF statement</li>
+        </ul>
+    </p>
+    <pre>
+
+        $delete = $_POST['delete'];
+
+        $sql = "DELETE FROM customer WHERE ID_customer=$delete";
+
+        if ($conn->query($sql) === TRUE) {
+            header( 'Location: ../../DBMenuPage/index.php?Entry=Deleted' ) ;
+            include 'close.php';
+        } else {
+            echo "Error deleting record: " . $conn->error;
+            include 'close.php';
+        }
+    </pre>
+
+    <hr>
+    <h3>Search DB</h3>
+    <p>
+        <ul>
+            <li>Gets variables from HTML form</li>
+            <li>Searches DB for letter received from form</li>
+            <li>Displays all data with first letter of last name</li>
+        </ul>
+    </p>
+    <pre>
+
+        $search = $_POST['search_bar'];
+    
+        $sql = "SELECT * FROM customer WHERE lname LIKE '$search%';";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            echo "&lt;table>&lt;tr>&lt;th>ID&lt;/th>&lt;th>fname&lt;/th>&lt;th>mname&lt;/th>&lt;th>lname&lt;/th>&lt;th>entrant&lt;/th>&lt;/tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "&lt;tr>&lt;td>" . $row['ID_customer']. "&lt;/td>&lt;td>" . $row['fname']. "&lt;/td>&lt;td> " . $row['mname'] . " &lt;/td>&lt;td>" . $row['lname']. "&lt;/td>&lt;td> " . $row['entrant'] ."&lt;/td>&lt;/tr>";
+            }
+            echo "&lt;/table>";
+
+        } else {
+            echo "&lt;br>No results";
+        }
+
+        include 'close.php';
+    </pre>
+    <hr>
+    <h3>Connects to Database **localhost**</h3>
+    <p> 
+            <ul>
+                <li>Establishes connection to localhost Database</li>
+                <li>Uses Mysqli to connect</li>
+                <li>Echo's multiple strings to show connection is successful</li>
+            </ul> 
+        </p>
+    <pre>        
+        $servername = "localhost";
+        $username = "root";
+        $password = "toor";
+        $dbname = "a4";
+            
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+            
+        if ($conn->connect_error) {
+            die("All Connections failed: " . $conn->connect_error);
+        }
+        echo "Connection Successful";</pre>
+
+    <hr>
+    <h3>Closes Connection to Database</h3>
+    <p> 
+            <ul>
+                <li>Closes connection with any database currently being used</li>
+
+            </ul> 
+        </p>
+    <pre>        
+        echo "&lt;h3>Trying to close the connection...&lt;/h3>";
+        $conn->close();
+        echo "&lt;h3>Connection Successfully Closed&lt;/h3>";  </pre>
+        <br><br><br>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+body {
+  background: #007991;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.head { grid-area: head;}
+.pic { grid-area; pic;}
+.step1 { grid-area: step1;}
+.step2 { grid-area: step2;}
+.step3 { grid-area: step3;}
+.step4 { grid-area: step4;}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'head '
+    'step1'
+    'product'
+    'step2'
+    'product2'
+    'pic';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+}

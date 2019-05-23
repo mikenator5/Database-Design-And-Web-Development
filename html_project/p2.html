@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/p2.css">
+
+  <title>Project 1</title>
+</head>
+<body>
+  <h1>How to Create a MySql Database!</h1>
+  <div class="grid-container">
+
+    <div class="step1">
+      <h3>Step 1: Create Database</h3>
+    <pre>mysql> CREATE DATABASE MySql_DB_Grade;
+Query OK, 1 row affected (0.23 sec)
+
+</pre>
+
+  <pre>mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| <mark>MySql_DB_Grade</mark>     |
+| a420sept           |
+| a4miked            |
+| a4sept18           |
+| a4test12sept       |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sys                |
++--------------------+
+10 rows in set (0.00 sec)
+
+</pre>
+
+    </div>
+
+    <div class = 'step2'>
+      <h3>Step 2: Create Table and Variables</h3>
+
+      <pre>mysql USE MySql_DB_Grade;
+Database changed
+mysql> CREATE TABLE Customer (
+    -> <mark>CustomerID INT(10) AUTO_INCREMENT NOT NULL PRIMARY KEY,</mark>
+    -> <mark>lname VARCHAR(50) NOT NULL,</mark>
+    -> <mark>fname VARCHAR(50) NOT NULL,</mark>
+    -> <mark>address VARCHAR(50) NOT NULL,</mark>
+    -> <mark>city VARCHAR(50) NOT NULL,</mark>
+    -> <mark>state VARCHAR(2) NOT NULL,</mark>
+    -> <mark>zipCode INT(5) NOT NULL,</mark>
+    -> <mark>phoneNumber INT(10) NOT NULL</mark>
+    -> );
+Query OK, 0 rows affected (0.31 sec)
+
+</pre>
+    </div>
+
+    <div class = 'step3'>
+      <h3>Step 3: Add Information to Table</h3>
+
+      <pre>mysql> INSERT INTO Customer (CustomerID, lname, fname, address, city, state, zipCode, phoneNumber)
+        VALUES <mark>(null, 'Dunn', 'Mike', '1313 Mockingbird Lane', 'Boise', 'ID', '83713', 2068886902);</mark>
+Query OK, 1 row affected (0.20 sec)
+</pre>
+
+    <br>
+
+       <pre>mysql> INSERT INTO Customer (CustomerID, lname, fname, address, city, state, zipCode, phoneNumber)
+         VALUES <mark>(null, 'Madison', 'Ken', '2345 16th NE', 'Kent', 'WA', '98109', 2067837890);</mark>
+    Query OK, 1 row affected (0.18 sec)</pre>
+
+    <br>
+
+      <pre>mysql> INSERT INTO Cutomer (CustomerID, lname, fname, address, city, state, zipCode, phoneNumber)
+        VALUES <mark>(null, 'Nelson', 'Greg', '45-39 173rd St', 'Redmond', 'WA', '98119', 2069809099);</mark>
+    Query OK, 1 row affected (0.01 sec)
+    </pre>
+
+    <br>
+
+    <pre>mysql> INSERT INTO Customer (CustomerID, lname, fname, address, city, state, zipCode, phoneNumber)
+       VALUES <mark>(null, 'Cena', 'John', '1313 RKO St', 'Rekem', 'ID', '83702', 2088675309);</mark>
+    Query OK, 1 row affected (0.21 sec)</pre>
+        </div>
+
+    <div class = 'step4'>
+      <h3>Step 4: Database Completed! Let's see the MASTERPIECE</h3>
+
+      <pre>mysql> SELECT * FROM Customer;
+    +------------+---------+-------+-----------------------+---------+-------+---------+-------------+
+    | CustomerID | lname   | fname | address               | city    | state | zipCode | phoneNumber |
+    +------------+---------+-------+-----------------------+---------+-------+---------+-------------+
+    |          1 | Dunn    | Mike  | 1313 Mockingbird Lane | Boise   | ID    | 83713   |  2068886902 |
+    |          2 | Nelson  | Greg  | 45-39 173rd St        | Redmond | WA    | 98119   |  2069809099 |
+    |          3 | Madison | Ken   | 2345 16th NE          | Kent    | WA    | 98109   |  2067837890 |
+    |          4 | Cena    | John  | 1313 RKO St           | Rekem   | ID    | 83702   |  2088675309 |
+    +------------+---------+-------+-----------------------+---------+-------+---------+-------------+
+    4 rows in set (0.00 sec)
+    </pre>
+    </div>
+
+    </div>

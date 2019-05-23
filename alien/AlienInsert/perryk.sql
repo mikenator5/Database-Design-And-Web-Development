@@ -1,0 +1,1 @@
+INSERT INTO `personalInformation` (`IDpersonal`, `fname`, `lname`, `dayBirth`, `monthBirth`, `yearBirth`, `email`, `phone`, `streetAddress`, `city`, `stateAddress`, `zip`, `country`) VALUES (NULL, 'Perry', 'Liver', '12', '8', '1999', 'hotdogs@gmail.com', '(208)532-5413', '134 W Westwood Way.', 'Moscow', 'ID', '213452', 'United States of America');

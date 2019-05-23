@@ -1,0 +1,36 @@
+body {
+    background-color: #c6f8f1;
+}
+
+
+ th, td {
+    border: 1px solid black;
+    width: 10%;
+    height: 15px;
+    padding: 10px;
+    text-align: left;
+    
+}
+
+input[type=text] {
+    font-size: 1.2em;
+    border: 2px solid #3d57ff;
+    border-radius: 4px;
+    background-color: cyan;
+}
+
+input[type='text']:hover {
+    box-shadow: 5px 5px gray;
+}
+
+input[type='text']:focus {
+    background: #FFFFFF;
+}
+    
+tr:hover {background-color: #ffe44b;}
+
+#myTitle {
+    text-align: center;
+    font-size: 2em;
+    
+}

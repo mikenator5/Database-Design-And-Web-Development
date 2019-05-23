@@ -1,0 +1,2 @@
+INSERT INTO `personalInformation` (`IDpersonal`, `fname`, `lname`, `dayBirth`, `monthBirth`, `yearBirth`, `email`, `phone`, `streetAddress`, `city`, `stateAddress`, `zip`, `country`) 
+VALUES (NULL, 'Billy', 'Smith', '29', '02', '1972', 'JimmyBeans@gmail.com', '208-958-3621', '4793 W. Molly Way', 'Moscow', 'ID', '83646', 'United States')
