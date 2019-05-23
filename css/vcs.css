@@ -2,9 +2,10 @@ body {
     text-align: center;
     background-color: #06759e;
 }
+
+
 .code {
     display: inline-block;
-    vertical-align: middle;
     color: white;
     padding: 2px;
     background-color: black;
