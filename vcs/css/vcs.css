@@ -1,13 +1,29 @@
 body {
-    text-align: center;
+    text-align: left;
     background-color: #06759e;
 }
+
+.head {
+    text-align: center;
+}
+
 .code {
     display: inline-block;
-    vertical-align: middle;
     color: white;
     padding: 2px;
     background-color: black;
-    width: 50%;
+    width: 700px;
     border-radius: 10px;
+
+}
+
+.code:hover {
+    transform: scale(1.2);
+}
+
+.main {
+    margin-left: 30%;
+}
+#git {
+    border-radius: 1.5%;
 }
