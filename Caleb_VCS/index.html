@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/vcs.css">
+    <title>VCS</title>
+
+
+</head>
+<body>
+    
+    <h1 id="date">Git and GitHub | Created by Michael Dunn | </h1>
+    <img src="images/gitDiagram.png" alt="gitDiagram" id="git">
+
+    <div class="code">
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>~</b></font>$ sudo apt install git</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>~</b></font>$ git --version</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>~</b></font>$ git config --global user.name &quot;mikenator5&quot;</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>~</b></font>$ git config --global user.email &quot;mikenator5@gmail.com&quot;</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>~</b></font>$ git config --list</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked</b></font>$ git init</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/.git</b></font>$ git config --help</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ rm -rf .git</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ git status</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ git add -A</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ git commit -m &quot;Your Message&quot;</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ git log</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ git diff</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ gedit .gitignore</pre>
+            <pre><font color="#8AE234"><b>compsci@compsci-VBox</b></font>:<font color="#729FCF"><b>/var/www/html/miked/vcs</b></font>$ git reset</pre>
+
+
+    </div>
+
+    <h5>Today is Thursday 23 May</h5>
+    <script>
+            window.onload = function() {
+                var d = new Date();
+                var s = d.toString();
+                var paragraph = document.getElementById("date");
+                var text = document.createTextNode(s.substring(4, 15));
+                // 4 - 15
+                console.log("Created on May 21, 2019");
+    
+                paragraph.append(text);
+            }    
+        </script>
+</body>
+</html>
